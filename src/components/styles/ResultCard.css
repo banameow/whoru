@@ -1,0 +1,24 @@
+/* Result Screen */
+.result-title {
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+.result-pet {
+    font-size: 2em;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.result-description {
+    font-size: 1.1em;
+    padding: 0 10px;
+}
+
+.small-text {
+  font-size: 0.8em;
+  opacity: 0.8;
+  margin-top: auto;
+}

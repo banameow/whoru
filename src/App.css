@@ -1,0 +1,71 @@
+/* General Styling */
+:root {
+  --primary-color: #ff99aa; /* Pink */
+  --secondary-color: #f7e6e9; /* Light Pink/Off-White */
+  --text-color: #333;
+  --bg-gradient: #fff5f5;
+}
+
+/* .app {
+  text-align: center;
+  padding: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #e63946;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.main-title {
+  color: var(--primary-color);
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.footer-text {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #888;
+} */
+
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.main-title {
+  color: var(--primary-color);
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.footer-text {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #888;
+}
