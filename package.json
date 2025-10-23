@@ -1,7 +1,7 @@
 {
   "name": "whoru",
+  "homepage": "https://banameow.github.io/whoru",
   "private": true,
-  "homepage": "https://banameow.github.io/whoru/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
