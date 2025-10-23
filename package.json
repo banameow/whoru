@@ -1,8 +1,8 @@
 {
   "name": "whoru",
-  "homepage": "https://banameow.github.io/whoru",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://banameow.github.io/whoru/",
   "type": "module",
   "scripts": {
   "dev": "vite",
