@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import Quiz from './components/Quiz';
 
-import home_bg from './assets/Personality/หน้าปก/ปกเว็บ.png';
-import inQuestion_bg from './assets/Personality/ช่วงตอบคำถาม/พื้นหลัง.png';
+import home_bg from '/assets/Personality/หน้าปก/ปกเว็บ.png';
+import inQuestion_bg from '/assets/Personality/ช่วงตอบคำถาม/พื้นหลัง.png';
 
 import { Personalities, ChoicesTable, getResult } from './components/ScoreTable';
 
@@ -61,7 +61,7 @@ function App() {
   };
 
   if (isFinished && result) {
-    const path = "src/assets/Personality/ช่วงท้าย";
+    const path = "./assets/Personality/ช่วงท้าย";
 
     return (
       <div className="h-screen overflow-y-auto bg-gray-100 py-8">

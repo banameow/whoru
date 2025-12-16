@@ -1,5 +1,5 @@
 const TOTAL_QUESTIONS = 10;
-const BASE_PATH = 'src/assets/Personality/ช่วงตอบคำถาม';
+const BASE_PATH = './assets/Personality/ช่วงตอบคำถาม';
 const CHOICES = ['ช้อย A.png', 'ช้อย B.png', 'ช้อย C.png'];
 
 const Quiz = ({ currentQuestion, onChoiceSelected }) => {
