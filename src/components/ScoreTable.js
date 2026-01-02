@@ -8,63 +8,34 @@ export const Personalities = [
   { title: "Top", score: 0 },
 ];
 
-export const ChoicesTable = [
-  {
-    A: ["Nerd", "Introvert", "Top"],
-    B: ["Entertain", "Chill"],
-    C: ["Hustle", "Athlete"],
-  },
-  {
-    A: ["Nerd", "Introvert"],
-    B: ["Entertain", "Chill"],
-    C: ["Hustle", "Athlete", "Top"],
-  },
-  {
-    A: ["Nerd", "Introvert"],
-    B: ["Entertain", "Chill"],
-    C: ["Hustle", "Athlete", "Top"],
-  },
-  {
-    A: ["Nerd", "Introvert"],
-    B: ["Entertain", "Chill"],
-    C: ["Hustle", "Athlete", "Top"],
-  },
-  {
-    A: ["Nerd", "Introvert"],
-    B: ["Entertain", "Chill"],
-    C: ["Hustle", "Athlete", "Top"],
-  },
-  {
-    A: ["Nerd", "Introvert"],
-    B: ["Entertain", "Chill"],
-    C: ["Hustle", "Athlete", "Top"],
-  },
-  {
-    A: ["Nerd", "Introvert"],
-    B: ["Entertain", "Chill", "Top"],
-    C: ["Hustle", "Athlete"],
-  },
-  {
-    A: ["Nerd", "Introvert"],
-    B: ["Entertain", "Chill"],
-    C: ["Hustle", "Athlete", "Top"],
-  },
-  {
-    A: ["Nerd", "Introvert"],
-    B: ["Entertain", "Chill"],
-    C: ["Hustle", "Athlete", "Top"],
-  },
-  {
-    A: ["Nerd", "Introvert"],
-    B: ["Entertain", "Chill"],
-    C: ["Hustle", "Athlete", "Top"],
-  },
-];
+export const ChoicesTable = {
+  A: "Nerd",
+  B: "Entertain",
+  C: "Hustle",
+  D: "Chill",
+  E: "Athlete",
+  F: "Introvert",
+  G: "Top",
+};
 
 // --- Result Logic ---
-export const getResult = (personalities) => {
-  const maxScore = Math.max(...personalities.map((p) => p.score));
-  const result = personalities.filter((p) => p.score === maxScore);
+export const getResult = (personalities, answerHistory, THAI_ALPHA) => {
+  const sorted = [...personalities].sort((a, b) => b.score - a.score);
+  const maxScore = sorted[0].score;
+  const maxScorers = sorted.filter(p => p.score === maxScore);
 
-  return result;
+  if (maxScorers.length === 1) return maxScorers;
+
+  const tieSorted = maxScorers.sort((a, b) => {
+    const getFirstIndex = (title) => {
+      const choiceLetter = Object.keys(ChoicesTable).find(key => ChoicesTable[key] === title);
+      const thaiLetter = THAI_ALPHA[choiceLetter];
+      return answerHistory.findIndex(ans => ans.includes(thaiLetter)) ?? Infinity;
+    };
+
+    return getFirstIndex(a.title) - getFirstIndex(b.title);
+  });
+
+  return tieSorted.slice(0, 2);
 };
+
