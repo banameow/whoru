@@ -117,39 +117,38 @@ function App() {
   };
 
   if (isFinished && result) {
-    if (isFinished && result) {
-      const path = result.length === 1
-        ? `./assets/Personality All/3.ส่วนท้าย/หลัก ${PERSONALITY_TYPES[result[0].title]}/${PERSONALITY_TYPES[result[0].title]}.png`
-        : `./assets/Personality All/3.ส่วนท้าย/หลัก ${PERSONALITY_TYPES[result[0].title]}/${PERSONALITY_TYPES[result[0].title]} - ${PERSONALITY_TYPES[result[1].title]}.png`;
+    const path = result.length === 1
+      ? `./assets/Personality All/3.ส่วนท้าย/หลัก ${PERSONALITY_TYPES[result[0].title]}/${PERSONALITY_TYPES[result[0].title]}.png`
+      : `./assets/Personality All/3.ส่วนท้าย/หลัก ${PERSONALITY_TYPES[result[0].title]}/${PERSONALITY_TYPES[result[0].title]} - ${PERSONALITY_TYPES[result[1].title]}.png`;
 
-      const altText = result.length === 1
-        ? PERSONALITY_TYPES[result[0].title]
-        : `${PERSONALITY_TYPES[result[0].title]} - ${PERSONALITY_TYPES[result[1].title]}`;
+    const altText = result.length === 1
+      ? PERSONALITY_TYPES[result[0].title]
+      : `${PERSONALITY_TYPES[result[0].title]} - ${PERSONALITY_TYPES[result[1].title]}`;
 
-      return (
-        <div className="relative flex justify-center items-center flex-col">
+    return (
+      <div className="flex justify-center items-center flex-col">
+        <div className="relative">
           <button
-            className='bg-[#bb8743] text-gray-50 absolute top-0 right-1 my-2 rounded px-1 py-2 text-xs cursor-pointer hover:scale-105 active:scale-95 transition-transform duration-200'
+            className='bg-[#bb8743] text-gray-50 absolute top-0 right-1 my-2 rounded px-1 py-2 text-xs cursor-pointer hover:scale-105'
             onClick={handleRestart}
           >
             ทำแบบทดสอบอีกครั้ง
           </button>
           <img
-            className='h-screen transition-all duration-700 ease-in-out shadow-lg'
+            className='h-screen shadow-lg'
             src={path}
             alt={altText}
           />
         </div>
-      );
-    }
+      </div>
+    );
   }
-
 
   if (showContent) {
     return (
       <div className="relative flex justify-center items-center flex-col">
         <img
-          className='h-screen transition-opacity duration-500'
+          className='h-screen'
           src={inQuestion_bg}
           alt="background"
         />
@@ -163,14 +162,14 @@ function App() {
 
         {currentQuestion > 0 ? (
           <button
-            className='bg-amber-100 absolute rounded text-sm px-3 py-1 bottom-2 cursor-pointer hover:scale-105 hover:bg-amber-200 active:scale-95 transition-transform duration-200'
+            className='bg-amber-100 absolute rounded text-sm px-3 py-1 bottom-2 cursor-pointer hover:scale-105 hover:bg-amber-200'
             onClick={handleGoBack}
           >
             ย้อนกลับ
           </button>
         ) :
           <button
-            className='bg-amber-100 absolute rounded text-sm px-3 py-1 bottom-2 cursor-pointer hover:scale-105 hover:bg-amber-200 active:scale-95 transition-transform duration-200'
+            className='bg-amber-100 absolute rounded text-sm px-3 py-1 bottom-2 cursor-pointer hover:scale-105 hover:bg-amber-200'
             onClick={handleGoHome}
           >
             ย้อนกลับ
@@ -183,13 +182,13 @@ function App() {
   return (
     <div className="relative flex justify-center items-center h-screen">
       <img
-        className='h-full w-auto transition-opacity duration-500'
+        className='h-full w-auto'
         src={home_bg}
         alt="home background"
       />
 
       <button
-        className='absolute w-56 bottom-1/3 translate-y-[-26px] cursor-pointer hover:scale-105 active:scale-95 transition-transform duration-200'
+        className='absolute w-56 bottom-1/3 translate-y-[-26px] cursor-pointer hover:scale-105'
         onClick={() => setShowContent(true)}
       >
         <img className='rounded' src={start_btn} alt="start" />

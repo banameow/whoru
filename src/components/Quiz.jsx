@@ -6,9 +6,9 @@ const Quiz = ({ currentQuestion, onChoiceSelected }) => {
     const choicesPath = `${BASE_PATH}/ข้อ ${currentQuestion + 1}/ช้อย`;
 
     return (
-        <div className="absolute flex flex-col animate-fade-in">
+        <div className="absolute flex flex-col">
             <img
-                className="w-[400px] h-auto transition-all duration-500"
+                className="w-[400px] h-auto"
                 src={questionImagePath}
                 alt={`Question ${currentQuestion + 1}`}
                 key={currentQuestion}
@@ -20,10 +20,10 @@ const Quiz = ({ currentQuestion, onChoiceSelected }) => {
                         <button
                             key={`question-${currentQuestion}-choice-${choiceIndex}`}
                             onClick={() => onChoiceSelected(choice)}
-                            className={`-mb-5 hover:scale-105 active:scale-95 transition-transform duration-200`}
+                            className={`-mb-5 hover:scale-105`}
                         >
                             <img
-                                className={`w-[300px] h-auto mx-auto transition-all duration-300 object-cover`}
+                                className={`w-[300px] h-auto mx-auto object-cover`}
                                 src={`${choicesPath}/${choice}`}
                                 alt={`Choice ${String.fromCharCode(65 + choiceIndex)}`}
                             />
