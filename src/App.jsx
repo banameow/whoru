@@ -9,6 +9,8 @@ import linktoig_btn from '/assets/Personality All/1.ส่วนแรก/ลิ
 
 import { Personalities, ChoicesTable, getResult } from './components/ScoreTable';
 
+import song from '/assets/song.mp3';
+
 const TOTAL_QUESTIONS = 10;
 
 const PERSONALITY_TYPES = {
@@ -37,7 +39,7 @@ function App() {
   const [isFinished, setIsFinished] = useState(false);
   const [result, setResult] = useState(null);
   const [answerHistory, setAnswerHistory] = useState([]);
-  // const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(true);
   const [volume] = useState(0.3);
 
   const audioRef = useRef(null);
@@ -89,16 +91,16 @@ function App() {
     );
   };
 
-  // const toggleMusic = () => {
-  //   if (audioRef.current) {
-  //     if (isMusicPlaying) {
-  //       audioRef.current.pause();
-  //     } else {
-  //       audioRef.current.play();
-  //     }
-  //     setIsMusicPlaying(!isMusicPlaying);
-  //   }
-  // };
+  const toggleMusic = () => {
+    if (audioRef.current) {
+      if (isMusicPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsMusicPlaying(!isMusicPlaying);
+    }
+  };
 
   const updatePersonalityScores = (selectedChoice, isAdding = true) => {
     const personalityTitle = ChoicesTable[selectedChoice];
@@ -184,13 +186,13 @@ function App() {
 
     return (
       <div className="flex justify-center items-center flex-col">
-        {/* <audio ref={audioRef} src={song} loop volume={volume} /> */}
+        <audio ref={audioRef} src={song} loop volume={volume} autoPlay={isMusicPlaying} />
 
-        {/* <SpeakerButton
+        <SpeakerButton
           isPlaying={isMusicPlaying}
           onToggle={toggleMusic}
           className="fixed top-4 left-4 z-50"
-        /> */}
+        />
 
         <div className="relative">
           <button
@@ -212,13 +214,13 @@ function App() {
   if (showContent) {
     return (
       <div className="relative flex justify-center items-center flex-col">
-        {/* <audio ref={audioRef} src={song} loop volume={volume} /> */}
+        <audio ref={audioRef} src={song} loop volume={volume} autoPlay={isMusicPlaying} />
 
-        {/* <SpeakerButton
+        <SpeakerButton
           isPlaying={isMusicPlaying}
           onToggle={toggleMusic}
           className="fixed top-4 left-4 z-50"
-        /> */}
+        />
 
         <img
           className='h-screen'
@@ -245,13 +247,13 @@ function App() {
 
   return (
     <div className="relative flex justify-center items-center h-screen">
-      {/* <audio ref={audioRef} src={song} loop volume={volume} /> */}
+      <audio ref={audioRef} src={song} loop volume={volume} autoPlay={isMusicPlaying} />
 
-      {/* <SpeakerButton
+      <SpeakerButton
         isPlaying={isMusicPlaying}
         onToggle={toggleMusic}
         className="fixed top-4 left-4 z-50"
-      /> */}
+      />
 
       <img
         className='h-full w-auto'
