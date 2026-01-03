@@ -265,13 +265,13 @@ function App() {
           setShowContent(true);
         }}
       >
-        <img className='rounded' src={start_btn} alt="start" />
+        <img className='rounded max-[300px]:scale-60' src={start_btn} alt="start" />
       </button>
 
       <div className='absolute bottom-1/4 translate-y-5 w-56'>
         <p className='text-center text-sm'>ติดตามผลงานเพิ่มเติมได้ที่</p>
         <a className='cursor-pointer' href='https://www.instagram.com/hischool.zone/'>
-          <img className='rounded' src={linktoig_btn} alt="toIG" />
+          <img className='rounded max-[300px]:scale-60' src={linktoig_btn} alt="toIG" />
         </a>
       </div>
 
