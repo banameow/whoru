@@ -6,7 +6,7 @@ const Quiz = ({ currentQuestion, onChoiceSelected }) => {
     const choicesPath = `${BASE_PATH}/ข้อ ${currentQuestion + 1}/ช้อยล่าสุด`;
 
     return (
-        <div className="absolute flex flex-col items-center max-[560px]:scale-90 max-[350px]:scale-80">
+        <div className="absolute flex flex-col items-center max-[560px]:scale-90 max-[410px]:scale-80 max-[350px]:scale-70">
             <img
                 className="w-[400px] h-auto mx-auto"
                 src={questionImagePath}
