@@ -2,7 +2,7 @@
   "name": "whoru",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://banameow.github.io/whoru/",
+  "homepage": "https://banameow.github.io/HiSCHOOL_TYPE/",
   "type": "module",
   "scripts": {
     "dev": "vite",
